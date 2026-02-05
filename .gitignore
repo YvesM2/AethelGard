@@ -1,0 +1,11 @@
+__pycache__/
+backs/
+*.py[cod]
+venv/
+.env
+.DS_Store
+# AethelGard Specifics
+dumps/*
+cases/*
+!dumps/.gitkeep
+!cases/.gitkeep
