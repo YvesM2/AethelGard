@@ -85,7 +85,7 @@ VOLATILITY_PATH=../volatility3/vol.py
 
 ---
 
-## ⚔️ Usage
+##  Usage
 
 ### Option 1: The Hunter Agent (CLI)
 
@@ -118,7 +118,7 @@ streamlit run dashboard.py
 
 ---
 
-## 🧠 Core Architecture
+##  Core Architecture
 
 AethelGard operates in 4 Distinct Phases:
 
@@ -127,7 +127,7 @@ AethelGard operates in 4 Distinct Phases:
 3. **Tier 3 (Local AI Investigator):** Orchestrates forensic tools (`Malfind`, `Netscan`, `DllList`) via Ollama to hunt for anomalies in the remaining suspects.
 4. **Guardrails:** A Python-based safety layer that overrides AI verdicts if critical artifacts (e.g., Code Injection, Unlinked Processes) are detected.
 
-## 📂 Project Structure
+##  Project Structure
 
 * `main.py`: The autonomous agent core.
 * `dashboard.py`: Streamlit-based visualization deck.
@@ -135,7 +135,7 @@ AethelGard operates in 4 Distinct Phases:
 * `cases/`: Auto-generated forensic reports and audit logs.
 * `logs/`: Granular, per-process JSON logs for deep-dive analysis.
 
-## 📜 License
+##  License
 
 MIT License
 
