@@ -1,4 +1,3 @@
-# src/agents/prompts.py
 
 SYSTEM_PROMPT = """
 You are AethelGard, a Senior DFIR Analyst.
