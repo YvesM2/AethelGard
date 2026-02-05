@@ -15,48 +15,37 @@ class VolatilityWrapper:
         if args is None:
             args = {}
 
-        # 1. Build the base command
-        # Syntax: python3 vol.py -f <dump> -r json <plugin>
         cmd = [sys.executable, self.vol_path, "-f", self.dump_path, "-r", "json", plugin_name]
 
-        # 2. Add Arguments (THE FIX)
-        # We iterate the dictionary and append strings to the command list.
         for key, value in args.items():
             if value is not None:
-                # Handle boolean flags (e.g., {'verbose': True} -> --verbose)
                 if isinstance(value, bool):
                     if value: cmd.append(f"--{key}")
-                # Handle standard key-value (e.g., {'pid': 708} -> --pid 708)
                 else:
                     cmd.append(f"--{key}")
                     cmd.append(str(value))
 
-        # 3. Execute
         try:
-            # Capture output (both stdout and stderr)
             result = subprocess.run(
                 cmd, 
                 capture_output=True, 
                 text=True, 
-                timeout=300 # 5 minute timeout for slow plugins
+                timeout=300 
             )
 
-            # 4. Error Handling (Non-JSON output)
             if result.returncode != 0:
                 return {
                     "status": "ERROR",
                     "error": result.stderr.strip() or "Unknown CLI Error",
                     "data": [],
-                    "raw": result.stdout  # Return raw for debugging
+                    "raw": result.stdout  
                 }
 
-            # 5. Parse JSON
             try:
                 output = result.stdout.strip()
                 if not output:
                     return {"status": "EMPTY", "data": []}
                 
-                # Find the start of the JSON structure (skip any deprecation warnings)
                 json_start = output.find('[')
                 if json_start == -1: json_start = output.find('{')
                 
