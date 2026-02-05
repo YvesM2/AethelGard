@@ -1,4 +1,4 @@
-# 🛡️ AethelGard V1.0
+#  AethelGard V1.0
 
 **Sovereign Autonomous Incident Response & Memory Forensics Engine**
 
@@ -6,14 +6,14 @@ AethelGard is a fully offline, air-gapped AI agent designed to triage Windows me
 
 Designed for high-security environments, AethelGard uses a **Tiered Trust Gate** architecture to filter noise and prevent AI hallucinations, strictly validating verdicts against hard forensic artifacts (Network, Injection, Masquerading).
 
-## 🧠 Core Architecture (V1.0)
+##  Core Architecture (V1.0)
 
 1.  **Tier 1 (Static Filter):** Instantly drops known-good Windows binaries (Trust Gate).
 2.  **Tier 2 (Heuristic Triage):** Analyzes process behavior using a "High Activity Profile" to filter noise (e.g., ignoring network volume for Edge/Slack).
 3.  **Tier 3 (Local AI Investigator):** Orchestrates forensic tools (`Malfind`, `Netscan`, `DllList`) via Ollama to hunt for anomalies.
 4.  **Guardrails:** A Python-based safety layer that overrides AI verdicts if critical artifacts (e.g., Code Injection) are detected.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 * Python 3.10+
