@@ -25,7 +25,7 @@ Designed for high-security environments, AethelGard uses a **Tiered Trust Gate**
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/AethelGard.git](https://github.com/YOUR_USERNAME/AethelGard.git)
+    git clone https://github.com/YvesM2/AethelGard.git
     cd AethelGard
     ```
 
